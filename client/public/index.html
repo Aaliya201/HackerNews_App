@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!---->
+    <meta charset="UTF-8">
+    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+    <link rel="stylesheet" href="styles.scss">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!---->
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+    <title>React App</title>
+    <script type="text/javascript">
+       function settime5(){
+         setInterval('window.location.reload()', 300000);
+              }
+       function settime10(){
+        setInterval( 'window.location.reload()', 600000);
+              }
+       function settime15(){
+        setInterval( 'window.location.reload()', 900000);
+              }
+       function settime1(){
+        setInterval( 'window.location.reload()', 60000);
+              }
+
+
+
+    </script>
+  </head>
+
+
+  <body style="background-color: #FAF1E6;">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!-- <div id="loader"></div> -->
+
+
+
+
+ <div class="sidebar">
+      <div class="logo-details">
+        <i class='bx bxl-c-plus-plus'></i>
+        <span class="logo_name">Clone</span>
+      </div>
+      <ul class="nav-links">
+        <li style="padding:5%">
+          <div class="iocn-link">
+            <a href="#">
+              <i class='bx bx-cog' ></i>
+              <span class="link_name">Auto Refresh</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow' ></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Auto Refresh</a></li>
+            <li><button onClick="settime1()" style ="background-color : #1D1b31; border-color: #1D1b31 ; color: white;">Refresh 1</button><a href="#"></a></li>
+            <li><button onClick="settime5()" style ="background-color : #1D1b31; border-color: #1D1b31; color: white;">Refresh 5</button><a href="#"></a></li>
+            <li><button onClick="settime10()" style ="background-color : #1D1b31; border-color: #1D1b31 ; color: white;">Refresh 10</button><a href="#"></a></li>
+            <li><button onClick="settime15()" style ="background-color : #1D1b31; border-color: #1D1b31; color: white;">Refresh 15</button><a href="#"></a></li>
+            <li><button onClick="window.location.reload()" style ="background-color : #1D1b31; border-color: #1D1b31 ; color: white;">Refresh</button><a href="#"></a></li>
+          </ul>
+        </li>
+
+        <!-- <li>
+          <a href="#">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="link_name">Dashboard</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Log </a></li>
+          </ul>
+        </li> -->
+        <li style="padding: 10%">
+          <!-- <div class="iocn-link">
+            <i class='bx bxs-chevron-down arrow' ></i>
+          </div> -->
+          <a href="/bookmarks" style="color: white">Bookmarks</a>
+
+
+
+        </li>
+
+        <li style="padding: 10%">
+
+                <a href="/logout" style="color: white ">Logout</a>
+
+        </li>
+
+        <li>
+      <div class="profile-details">
+        <div class="profile-content">
+          <!--<img src="image/profile.jpg" alt="profile">-->
+        </div>
+        <div class="name-job">
+          <div class="profile_name">Team 5</div>
+          <div class="job">Hacker News App</div>
+        </div>
+        <i class='bx bx-log-out' ></i>
+      </div>
+    </li>
+  </ul>
+    </div>
+
+
+    <script>
+
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+      arrow[i].addEventListener("click", (e)=>{
+     let arrowParent = e.target.parentElement.parentElement;
+     arrowParent.classList.toggle("showMenu");
+      });
+    }
+
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", ()=>{
+      sidebar.classList.toggle("close");
+    });
+    </script>
+
+
+
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
